@@ -49,7 +49,7 @@ def post_edit(request, pk):
 @login_required
 def post_draft_list(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
-    return render(request, 'blog/post_draft_list.html', {'posts':posts})
+    return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
 @login_required
 def post_publish(request, pk):
